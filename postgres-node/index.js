@@ -55,6 +55,7 @@ app.delete("/posts/:id", async (req, res) => {
     console.error(error.message)
   }
 })
-app.listen(4000, ()=>{
-  console.log('the server is running on 4000')
+let port = process.env.PORT || 4000
+app.listen(port, ()=>{
+  console.log('the server is running')
 })
