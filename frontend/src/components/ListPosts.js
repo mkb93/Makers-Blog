@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-
+import EditPost from './EditPost'
 function ListPosts() {
   
   const [posts, setPosts]= useState([])
@@ -44,8 +44,8 @@ function ListPosts() {
       {posts.map((post)=>(
         <tr key={post.posts_id}>
         <td>{post.title}</td>
-        <td>Edit</td>
-        <td><button className='btn btn-danger' onClick={()=>deletePost(post.posts_id)}></button></td>
+        <td><EditPost post ={post}/></td>
+        <td><button className='btn btn-danger' onClick={()=>deletePost(post.posts_id)}>Delete</button></td>
       </tr>
       ))}
     </tbody>
