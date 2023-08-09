@@ -7,7 +7,7 @@ function InputPost() {
     e.preventDefault()
     try {
       const body = {title};
-      const response = await fetch("http://localhost:4000/posts", {
+      const response = await fetch("https://makers-blog-service.onrender.com/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(body)

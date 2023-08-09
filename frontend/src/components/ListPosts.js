@@ -3,12 +3,20 @@ import React, { Fragment, useEffect, useState } from 'react'
 function ListPosts() {
   
   const [posts, setPosts]= useState([])
-  const deletePost = () => {
-    
+  const deletePost = async (id) => {
+      try {
+        const deletePost = await fetch(`https://makers-blog-service.onrender.com/posts/${id}`, {
+          method: "DELETE"
+        })
+        setPosts(posts.filter(post=>post.posts_id !== id))
+        console.log(deletePost)
+      } catch (error) {
+        console.error(error.message)
+      }
   }
   const getPosts = async () => {
     try {
-      const response = await fetch("http://localhost:4000/posts")
+      const response = await fetch("https://makers-blog-service.onrender.com/posts")
       const data = await response.json()
       setPosts(data)
     } catch (error) {
