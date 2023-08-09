@@ -1,7 +1,8 @@
 CREATE DATABASE blog;
 
-CREATE TABLE posts(
-posts_id SERIAL PRIMARY KEY,
-title VARCHAR(255)
-
-)
+CREATE TABLE posts (
+    posts_id SERIAL PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
