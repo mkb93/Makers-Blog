@@ -1,0 +1,7 @@
+CREATE DATABASE blog;
+
+CREATE TABLE posts(
+posts_id SERIAL PRIMARY KEY,
+title VARCHAR(255)
+
+)
