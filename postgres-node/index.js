@@ -11,8 +11,8 @@ app.use(express.json())
 // create a post
 app.post("/posts", async (req, res) => {
   try {
-    const {title} = req.body
-    const newPost = await pool.query("INSERT INTO posts (title) VALUES($1) RETURNING *",[title])
+    const {title, content} = req.body
+    const newPost = await pool.query('INSERT INTO posts (title, content) VALUES($1, $2) RETURNING *',[title, content])
     res.json(newPost.rows[0]);
   } catch (error) {
     console.error(error.message)
