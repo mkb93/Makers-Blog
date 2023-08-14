@@ -2,6 +2,7 @@ CREATE DATABASE blog;
 
 CREATE TABLE posts(
 posts_id SERIAL PRIMARY KEY,
-title VARCHAR(255)
-
-)
+title VARCHAR(255),
+content TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

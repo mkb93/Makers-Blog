@@ -31,6 +31,7 @@ function ListPosts() {
     <thead>
       <tr>
         <th>Title</th>
+        <th>Content</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -44,6 +45,7 @@ function ListPosts() {
       {posts.map((post)=>(
         <tr key={post.posts_id}>
         <td>{post.title}</td>
+        <td>{post.content}</td>
         <td><EditPost post ={post}/></td>
         <td><button className='btn btn-danger' onClick={()=>deletePost(post.posts_id)}>Delete</button></td>
       </tr>
