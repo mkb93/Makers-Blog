@@ -21,12 +21,31 @@ function InputPost() {
 
   return ( <Fragment>
     
-      <h1 className='text-center mt-5'>InputPost</h1>
+      {/* <h1 className='text-center mt-5'>InputPost</h1>
       <form className='d-flex mt-5' onSubmit={onSubmitForm}>
         <input type="text" className='form-control' value={title} onChange={e=> setTitle(e.target.value)} placeholder="Title" />
         <input type="text" className='form-control' value={content} onChange={e=> setContent(e.target.value)} placeholder="Content" />
         <button className='btn btn-success'>Add</button>
-      </form>
+      </form> */}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target={`#idCreate`}>
+  Create
+</button>
+<div class="modal" id='idCreate'>
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+        <h4 class="modal-title">Write a Post</h4>
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+      </div>
+      <form className='d-flex mt-5' onSubmit={onSubmitForm}>
+        <input type="text" className='form-control' value={title} onChange={e=> setTitle(e.target.value)} placeholder="Title" />
+        <input type="text" className='form-control' value={content} onChange={e=> setContent(e.target.value)} placeholder="Content" />
+        <button className='btn btn-success'>Add</button>
+      </form> 
+      
+</div>
+</div>
+</div>
   </Fragment>
   )
 }
